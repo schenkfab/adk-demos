@@ -1,6 +1,6 @@
 # ADK Walkthrough
 
-This project contains a series of examples demonstrating how to use the Gemini Agent Development Kit (ADK). Each folder contains a different agent configuration, showcasing a specific feature of the ADK.
+This project contains a series of examples demonstrating how to use the Google Agent Development Kit (ADK). Each folder contains a different agent configuration, showcasing a specific feature of the ADK.
 
 ## Agents
 
