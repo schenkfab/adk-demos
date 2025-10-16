@@ -2,6 +2,22 @@
 
 This project contains a series of examples demonstrating how to use the Google Agent Development Kit (ADK). Each folder contains a different agent configuration, showcasing a specific feature of the ADK.
 
+## Execution
+
+You can try the agents by adding a `.env` file to each agents folder with the following information:
+```
+GOOGLE_GENAI_USE_VERTEXAI=TRUE/FALSE
+GOOGLE_CLOUD_PROJECT=PROJECT_ID if VERTEXAI == TRUE
+GOOGLE_CLOUD_LOCATION=global
+GOOGLE_API_KEY=Key if VERETXAI == FALSE
+```
+
+After that, run the following:
+
+1. Create a virtual environment, e.g. with `python -m venv .venv` and activate it with `source .venv/bin/activate`.
+2. Install requirements, e.g. with `pip install -r requirements.txt`
+3. Run ADK Web with `adk web`
+
 ## Agents
 
 ### [1 - LlmAgent](https://github.com/schenkfab/adk-demos/tree/main/1%20-%20LlmAgent)
