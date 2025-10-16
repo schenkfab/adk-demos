@@ -1,1 +1,4 @@
 google-adk==1.16.0
+ag_ui_adk
+uvicorn
+fastapi

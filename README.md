@@ -39,3 +39,7 @@ This agent shows how to use the built-in `google_search` tool. The agent is conf
 ### [8 - MCP Tools](https://github.com/schenkfab/adk-demos/tree/main/8%20-%20MCP%20Tools)
 
 This example demonstrates the use of MCP (Multiple-Context Prompting) tools. The agent connects to an external MCP server using an `MCPToolset` to generate a custom greeting, showcasing how to extend agent capabilities with external services.
+
+### [9 - Application Integration](https://github.com/schenkfab/adk-demos/tree/main/9%20-%20Application%20Integration)
+
+This agent demonstrates how to use the `ApplicationIntegrationToolset` to connect to a Google Cloud Application Integration. This allows the agent to trigger integrations and use them as tools.

@@ -1,0 +1,164 @@
+{
+  "name": "projects/475207959809/locations/us-central1/integrations/conversation_summary_cloudsql/versions/cc1e0150-6f5a-48e4-b50a-48285751f353",
+  "description": "\n # Overview\nAPI Triggered Email Notification\n\n## Orchestration\nThis integration is triggered via an API call.\n\nWhen the \"API trigger\" is activated, the workflow proceeds to execute the \"Send Email\" task. This task sends an email, concluding the workflow.",
+  "updateTime": "2025-10-16T07:28:25.548Z",
+  "createTime": "2025-10-16T07:15:43.602Z",
+  "lastModifierEmail": "fabian@google.com",
+  "triggerConfigs": [{
+    "label": "API trigger",
+    "startTasks": [{
+      "taskId": "1"
+    }],
+    "properties": {
+      "Trigger name": "_API_1"
+    },
+    "triggerType": "API",
+    "triggerNumber": "1",
+    "triggerId": "api_trigger/_API_1",
+    "position": {
+      "x": 140,
+      "y": 45
+    },
+    "inputVariables": {
+      "names": ["conversation"]
+    },
+    "outputVariables": {
+    }
+  }],
+  "taskConfigs": [{
+    "task": "EmailTask",
+    "taskId": "1",
+    "parameters": {
+      "Cc": {
+        "key": "Cc",
+        "value": {
+          "stringArray": {
+          }
+        }
+      },
+      "TextBody": {
+        "key": "TextBody",
+        "value": {
+          "stringValue": "$conversation$"
+        }
+      },
+      "Bcc": {
+        "key": "Bcc",
+        "value": {
+          "stringArray": {
+          }
+        }
+      },
+      "AttachmentPath": {
+        "key": "AttachmentPath",
+        "value": {
+          "stringArray": {
+          }
+        }
+      },
+      "ThrowNoRequiredInputException": {
+        "key": "ThrowNoRequiredInputException",
+        "value": {
+          "booleanValue": true
+        }
+      },
+      "To": {
+        "key": "To",
+        "value": {
+          "stringArray": {
+            "stringValues": ["fabian@google.com"]
+          }
+        }
+      },
+      "Subject": {
+        "key": "Subject",
+        "value": {
+          "stringValue": "Action Executed"
+        }
+      },
+      "BodyFormat": {
+        "key": "BodyFormat",
+        "value": {
+          "stringValue": "text"
+        }
+      },
+      "EmailConfigInput": {
+        "key": "EmailConfigInput",
+        "value": {
+          "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.EmailConfig\"\n}"
+        }
+      }
+    },
+    "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+    "displayName": "Send Email",
+    "externalTaskType": "NORMAL_TASK",
+    "position": {
+      "x": 140,
+      "y": 146
+    }
+  }],
+  "integrationParameters": [{
+    "key": "conversation",
+    "dataType": "STRING_VALUE",
+    "displayName": "conversation",
+    "inputOutputType": "IN"
+  }, {
+    "key": "summary",
+    "dataType": "STRING_VALUE",
+    "displayName": "summary"
+  }, {
+    "key": "`ExecutionMode`",
+    "dataType": "STRING_VALUE",
+    "defaultValue": {
+      "stringValue": ""
+    },
+    "displayName": "`ExecutionMode`",
+    "isTransient": true
+  }, {
+    "key": "`ErrorInfo`",
+    "dataType": "JSON_VALUE",
+    "defaultValue": {
+      "jsonValue": "{\n  \"message\": \"\",\n  \"code\": 0.0\n}"
+    },
+    "displayName": "`ErrorInfo`",
+    "isTransient": true,
+    "jsonSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    }\n  }\n}"
+  }, {
+    "key": "`ExecutionId`",
+    "dataType": "STRING_VALUE",
+    "defaultValue": {
+      "stringValue": ""
+    },
+    "displayName": "`ExecutionId`",
+    "isTransient": true
+  }, {
+    "key": "`IntegrationName`",
+    "dataType": "STRING_VALUE",
+    "defaultValue": {
+      "stringValue": ""
+    },
+    "displayName": "`IntegrationName`",
+    "isTransient": true
+  }, {
+    "key": "`Region`",
+    "dataType": "STRING_VALUE",
+    "defaultValue": {
+      "stringValue": ""
+    },
+    "displayName": "`Region`",
+    "isTransient": true
+  }, {
+    "key": "`ProjectId`",
+    "dataType": "STRING_VALUE",
+    "defaultValue": {
+      "stringValue": ""
+    },
+    "displayName": "`ProjectId`",
+    "isTransient": true
+  }],
+  "runAsServiceAccount": "***-compute@developer.gserviceaccount.com",
+  "cloudLoggingDetails": {
+    "cloudLoggingSeverity": "INFO",
+    "enableCloudLogging": true
+  }
+}
