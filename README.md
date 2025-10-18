@@ -59,3 +59,7 @@ This example demonstrates the use of MCP (Multiple-Context Prompting) tools. The
 ### [9 - Application Integration](https://github.com/schenkfab/adk-demos/tree/main/9%20-%20Application%20Integration)
 
 This agent demonstrates how to use the `ApplicationIntegrationToolset` to connect to a Google Cloud Application Integration. This allows the agent to trigger integrations and use them as tools.
+
+### [10 - DLP Callback](https://github.com/schenkfab/adk-demos/tree/main/10%20-%20DLP%20Callback)
+
+This agent uses a `Google Cloud Data Loss Prevention API` to check for PII in a given text. The tool is configured with a callback to the `LlmAgent` to redact the PII.

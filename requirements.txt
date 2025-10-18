@@ -1,4 +1,5 @@
 google-adk==1.16.0
+google-cloud-dlp==3.33.0
 ag_ui_adk
 uvicorn
 fastapi
