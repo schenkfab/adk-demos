@@ -22,46 +22,46 @@ After that, run the following:
 
 ## Agents
 
-### [1 - LlmAgent](https://github.com/schenkfab/adk-demos/tree/main/1%20-%20LlmAgent)
+### [001 - LlmAgent](https://github.com/schenkfab/adk-demos/tree/main/001%20-%20LlmAgent)
 
 This agent demonstrates the fundamental `LlmAgent`. It shows how to define an agent with a name, description, model, and instruction. It also covers adding a `static_instruction` for context caching and defining an `output_schema` for structured output.
 
-### [2 - Sequential Agent](https://github.com/schenkfab/adk-demos/tree/main/2%20-%20Sequential%20Agent)
+### [002 - Sequential Agent](https://github.com/schenkfab/adk-demos/tree/main/002%20-%20Sequential%20Agent)
 
 This example introduces the `SequentialAgent`, which executes a series of sub-agents in a predefined order. The included agent first greets the user and then says goodbye, showcasing a simple sequential workflow.
 
-### [3 - Parallel Agent](https://github.com/schenkfab/adk-demos/tree/main/3%20-%20Parallel%20Agent)
+### [003 - Parallel Agent](https://github.com/schenkfab/adk-demos/tree/main/003%20-%20Parallel%20Agent)
 
 This agent demonstrates the `ParallelAgent`, which runs multiple sub-agents concurrently. The example features three agents that greet the user in different languages simultaneously, illustrating how to perform parallel tasks.
 
-### [4 - Loop Agent](https://github.com/schenkfab/adk-demos/tree/main/4%20-%20Loop%20Agent)
+### [004 - Loop Agent](https://github.com/schenkfab/adk-demos/tree/main/004%20-%20Loop%20Agent)
 
 This example shows how to use the `LoopAgent` to run a sub-agent multiple times. The agent in this folder will greet the user in German three times in a row.
 
-### [4-1 - Loop Agent ADVANCED](https://github.com/schenkfab/adk-demos/tree/main/4-1%20-%20Loop%20Agent%20ADVANCED)
+### [004-1 - Loop Agent ADVANCED](https://github.com/schenkfab/adk-demos/tree/main/004-1%20-%20Loop%20Agent%20ADVANCED)
 
 This more advanced `LoopAgent` example demonstrates a content creation and review loop. A `writer_agent` generates an article, and a `check_agent` verifies if it meets a specific word count. The loop continues until the condition is met or the maximum number of iterations is reached, using a custom `exit_loop` tool to terminate the process.
 
-### [5 - Tools](https://github.com/schenkfab/adk-demos/tree/main/5%20-%20Tools)
+### [005 - Tools](https://github.com/schenkfab/adk-demos/tree/main/005%20-%20Tools)
 
 This agent demonstrates how to create and use custom tools. A `get_words` tool is defined to count the words in a text, and a `check_agent` uses this tool to validate the length of an article created by a `writer_agent`.
 
-### [6 - AgentTool](https://github.com/schenkfab/adk-demos/tree/main/6%20-%20AgentTool)
+### [006 - AgentTool](https://github.com/schenkfab/adk-demos/tree/main/006%20-%20AgentTool)
 
 This example illustrates how to use an `AgentTool`, which allows one agent to use another agent as a tool. The `root_agent` in this example uses a `check_agent` (which itself has a `get_words` tool) to verify the word count of a generated article.
 
-### [7 - BuiltIn Tools](https://github.com/schenkfab/adk-demos/tree/main/7%20-%20BuiltIn%20Tools)
+### [007 - BuiltIn Tools](https://github.com/schenkfab/adk-demos/tree/main/007%20-%20BuiltIn%20Tools)
 
 This agent shows how to use the built-in `google_search` tool. The agent is configured to act as a search specialist, demonstrating how to integrate pre-built functionalities.
 
-### [8 - MCP Tools](https://github.com/schenkfab/adk-demos/tree/main/8%20-%20MCP%20Tools)
+### [008 - MCP Tools](https://github.com/schenkfab/adk-demos/tree/main/008%20-%20MCP%20Tools)
 
 This example demonstrates the use of MCP (Multiple-Context Prompting) tools. The agent connects to an external MCP server using an `MCPToolset` to generate a custom greeting, showcasing how to extend agent capabilities with external services.
 
-### [9 - Application Integration](https://github.com/schenkfab/adk-demos/tree/main/9%20-%20Application%20Integration)
+### [009 - Application Integration](https://github.com/schenkfab/adk-demos/tree/main/009%20-%20Application%20Integration)
 
 This agent demonstrates how to use the `ApplicationIntegrationToolset` to connect to a Google Cloud Application Integration. This allows the agent to trigger integrations and use them as tools.
 
-### [10 - DLP Callback](https://github.com/schenkfab/adk-demos/tree/main/10%20-%20DLP%20Callback)
+### [010 - DLP Callback](https://github.com/schenkfab/adk-demos/tree/main/010%20-%20DLP%20Callback)
 
 This agent uses a `Google Cloud Data Loss Prevention API` to check for PII in a given text. The tool is configured with a callback to the `LlmAgent` to redact the PII.
