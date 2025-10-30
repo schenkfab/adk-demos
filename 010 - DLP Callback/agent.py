@@ -42,7 +42,7 @@ root_agent = Agent(
     model="gemini-2.5-flash",
     name="search_agent",
     instruction="""
-    Use the `integration_tool` to send a summary of the conversation to the user once the user asks for it.
+    You are a friendly agent that is supporting the customer with his question.
     """,
     before_model_callback=check_before_model,
 )
