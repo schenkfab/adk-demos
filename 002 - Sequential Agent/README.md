@@ -22,5 +22,8 @@ second_agent = LlmAgent(
     instruction="Use the same language as the last message and say good bye in the same language.",
 )
 
-root_agent = SequentialAgent(name="root_agent", sub_agents=[first_agent, second_agent])
+root_agent = SequentialAgent(
+    name="root_agent",
+    sub_agents=[first_agent, second_agent] # The agents will run in the list order without LLM summarization from the root agent.
+)
 ```
