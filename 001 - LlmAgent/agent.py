@@ -2,7 +2,6 @@ from google.adk.agents import LlmAgent
 from google.genai import types
 from pydantic import BaseModel
 
-
 # Defining an Agent with minimal information
 
 root_agent = LlmAgent(
@@ -28,13 +27,18 @@ root_agent = LlmAgent(
         parts=[
             types.Part(text="You are a helpful assistant."),
         ],
-    ),
+    )
 )
-
 # Adding an output_schema
 
 
 class TranslatedContent(BaseModel):
+    """A Pydantic model representing translated content.
+
+    Attributes:
+        content: The translated text.
+        language: The language of the translated text.
+    """
     content: str
     language: str
 
@@ -53,4 +57,6 @@ root_agent = LlmAgent(
         ],
     ),
     output_schema=TranslatedContent,
+    disallow_transfer_to_parent=True, # output_schema cannot co-exist with agent transfer configurations
+    disallow_transfer_to_peers=True # output_schema cannot co-exist with agent transfer configurations
 )
