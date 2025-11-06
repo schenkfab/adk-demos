@@ -1,5 +1,4 @@
-from google.adk.agents import SequentialAgent, LlmAgent
-
+from google.adk.agents import LlmAgent, SequentialAgent
 
 first_agent = LlmAgent(
     name="greeting_agent",
@@ -14,5 +13,8 @@ second_agent = LlmAgent(
     model="gemini-2.5-flash-lite",
     instruction="Use the same language as the last message and say good bye in the same language.",
 )
+
+# The root agent itself will not use an LLM and execute in the exact order
+# as in the sub_agents list.
 
 root_agent = SequentialAgent(name="root_agent", sub_agents=[first_agent, second_agent])
