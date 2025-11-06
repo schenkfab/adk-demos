@@ -27,7 +27,7 @@ root_agent = LlmAgent(
         parts=[
             types.Part(text="You are a helpful assistant."),
         ],
-    )
+    ),
 )
 # Adding an output_schema
 
@@ -39,6 +39,7 @@ class TranslatedContent(BaseModel):
         content: The translated text.
         language: The language of the translated text.
     """
+
     content: str
     language: str
 
@@ -57,6 +58,6 @@ root_agent = LlmAgent(
         ],
     ),
     output_schema=TranslatedContent,
-    disallow_transfer_to_parent=True, # output_schema cannot co-exist with agent transfer configurations
-    disallow_transfer_to_peers=True # output_schema cannot co-exist with agent transfer configurations
+    disallow_transfer_to_parent=True,  # output_schema cannot co-exist with agent transfer configurations
+    disallow_transfer_to_peers=True,  # output_schema cannot co-exist with agent transfer configurations
 )
