@@ -22,6 +22,9 @@ third_agent = LlmAgent(
     instruction="Greet the user nicely in Spanish",
 )
 
+# The parallel agent will execute all three agents in parallel without 
+# waiting for any of them to finish.
+
 root_agent = ParallelAgent(
     name="root_agent", sub_agents=[first_agent, second_agent, third_agent]
 )
