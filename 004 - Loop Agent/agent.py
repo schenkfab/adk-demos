@@ -8,4 +8,6 @@ first_agent = LlmAgent(
     instruction="Greet the user nicely in German",
 )
 
+# This simple loop agent will execute the agent in sub_agents exactly `max_iterations` times.
+
 root_agent = LoopAgent(name="root_agent", sub_agents=[first_agent], max_iterations=3)

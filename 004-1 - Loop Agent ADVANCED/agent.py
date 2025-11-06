@@ -16,7 +16,8 @@ root_agent = LoopAgent(name="root_agent", sub_agents=[first_agent], max_iteratio
 
 
 def exit_loop(tool_context: ToolContext):
-    """Call this function ONLY when the critique indicates no further changes are needed, signaling the iterative process should end."""
+    """Call this function ONLY when the critique indicates 
+    no further changes are needed, signaling the iterative process should end."""
     print(f"  [Tool Call] exit_loop triggered by {tool_context.agent_name}")
     tool_context.actions.escalate = True
     # Return empty dict as tools should typically return JSON-serializable output
@@ -31,10 +32,17 @@ writer_agent = LlmAgent(
 
 check_agent = LlmAgent(
     name="check_agent",
-    instruction="Check if the generated article is approx. 100 words long. If it is, executed `exit_loop` otherwise guide the agent to rewrite with approx 100 words.",
+    instruction=(
+        "Check if the generated article is approx. 100 words long."
+        "If it is, executed `exit_loop` otherwise guide the agent"
+        "to rewrite with approx 100 words."
+    ),
     model="gemini-2.5-flash",
     tools=[exit_loop],
 )
+
+# The loop agent will execute the sequential flow of sub_agents exactly 3 times or until
+# `exit_loop` is called which sets `tool_context.actions.escalate = True`
 
 root_agent = LoopAgent(
     name="root_agent",
