@@ -1,6 +1,6 @@
 # ADK Walkthrough
 
-***Tested with Google ADK 1.16.0***
+***Tested with Google ADK 1.18.0***
 
 This project contains a series of examples demonstrating how to use the Google Agent Development Kit (ADK). Each folder contains a different agent configuration, showcasing a specific feature of the ADK.
 

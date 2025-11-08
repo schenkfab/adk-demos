@@ -1,5 +1,6 @@
-google-adk==1.16.0
+google-adk==1.18.0
 google-cloud-dlp==3.33.0
+google-cloud-texttospeech==2.32.0
 ag_ui_adk
 uvicorn
 fastapi
